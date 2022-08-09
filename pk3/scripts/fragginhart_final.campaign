@@ -1,0 +1,8 @@
+{
+  name        "fragginhart_final"
+  shortname   "fragginhart_final"
+  description "Fragginhart Canyon by Remasters.\n"
+  maps        "fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final;fragginhart_final"
+  mapTC       374 374
+  type        "wolfmp"
+}
