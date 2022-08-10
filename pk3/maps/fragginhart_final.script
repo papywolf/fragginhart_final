@@ -12,7 +12,7 @@ game_manager
 		wait 50
 		setautospawn "Forward bunker" 0
 		setautospawn "Allied Spawn" 1
-        // alertentity dannyboy
+        setstate block_hidenroom default
 	}
     
     trigger capture
@@ -330,9 +330,9 @@ main_gate_keycard
     spawn
     {
 	    wait 200
-        setstate main_gate_captured_keycard invisible
         setstate main_gate_keycard_CMM default
         setstate Maingate_cmm default
+        
         
     }
     trigger stolen 
@@ -474,6 +474,7 @@ Main_Gate
         setstate button2_Main_Gate default
         setstate button1_Main_Gate invisible
         setstate cov_door_Main_Gate invisible
+        setstate main_door_tunnels invisible
         
     }
     
@@ -489,6 +490,7 @@ Main_Gate
         // setstate cov_door_Main_Gate invisible
         setstate button2_Main_Gate invisible
         setstate button1_Main_Gate invisible
+        setstate main_door_tunnels default
     }   
 	
 	trigger open

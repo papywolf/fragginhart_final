@@ -23,4 +23,4 @@ function Compile-pk3 {
     copy-Item -Force "$localrepo\pk3\$mapname.pk3" "$localrepo\$mapname.pk3"
 }
 
-Compile-pk3
+## Compile-pk3
