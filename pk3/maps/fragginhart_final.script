@@ -13,12 +13,11 @@ game_manager
 		setautospawn "Forward bunker" 0
 		setautospawn "Allied Spawn" 1
         setstate block_hidenroom default
+        alertentity gen_sound
 	}
     
     trigger capture
 	{
-        // alertentity dannyboy
-        // wait 9000
         wm_teamvoiceannounce 0 "fragginhart_axis_dannyboy"
         wm_teamvoiceannounce 1 "fragginhart_allies_dannyboy"
         wm_teamvoiceannounce 0 "fragginhart_axis_dannyboy"
@@ -359,6 +358,7 @@ main_gate_keycard
 		//when the objective is delivered to its deliverypoint 
 		trigger move_Main_Gate alive_action_Main_Gate
         setstate Maingate_cmm invisible
+        alertentity gen_sound
 		// *----------------------------------- vo ------------------------------------------*
 		wm_teamvoiceannounce 0 "axis_hq_objective_lost"
 		wm_teamvoiceannounce 1 "allies_hq_objective_captured"
@@ -467,12 +467,12 @@ Main_Gate
     {		
         playsound sound/movers/misc/garage_door_loop_01.wav looping volume 1024
 		// gotomarker Main_Gate_closed_pos 50 wait
-        gotomarker Main_Gate_open_pos 50 wait
+        // gotomarker Main_Gate_open_pos 50 wait
         wm_announce "Main gate controls enabled."
 		stopsound
         setstate button_dead_Main_Gate invisible
-        setstate button2_Main_Gate default
-        setstate button1_Main_Gate invisible
+        setstate button2_Main_Gate invisible
+        setstate button1_Main_Gate default
         setstate cov_door_Main_Gate invisible
         setstate main_door_tunnels invisible
         
