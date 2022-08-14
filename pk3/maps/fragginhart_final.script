@@ -331,6 +331,7 @@ main_gate_keycard
 	    wait 200
         setstate main_gate_keycard_CMM default
         setstate Maingate_cmm default
+        // setstate main_gate_dropzone invisible
         
         
     }
@@ -338,6 +339,7 @@ main_gate_keycard
     {
     	//when the objective is taken
         setstate main_gate_keycard_CMM invisible
+        setstate main_gate_dropzone default
 
 	}
 	trigger dropped
@@ -346,11 +348,13 @@ main_gate_keycard
 		// *----------------------------------- vo ------------------------------------------*
 		wm_teamvoiceannounce 1 "allies_hq_objective_lost"
 		// *---------------------------------------------------------------------------------*
+        // setstate main_gate_dropzone invisible
 	}
 	trigger returned
 	{
 		//when defending team touches the dropped objective
         setstate main_gate_keycard_CMM default
+        setstate main_gate_dropzone invisible
 
 	} 
 	trigger captured
@@ -359,6 +363,7 @@ main_gate_keycard
 		trigger move_Main_Gate alive_action_Main_Gate
         setstate Maingate_cmm invisible
         alertentity gen_sound
+        setstate main_gate_dropzone invisible
 		// *----------------------------------- vo ------------------------------------------*
 		wm_teamvoiceannounce 0 "axis_hq_objective_lost"
 		wm_teamvoiceannounce 1 "allies_hq_objective_captured"
@@ -590,22 +595,25 @@ documents
     spawn
     {
 	  wait 20
+      setstate the_dropzone invisible
     }
     trigger stolen 
     {
         setstate documents_CMM invisible 
+        setstate the_dropzone default
 	}
 	trigger dropped
 	{
-
+        // setstate the_dropzone invisible
 	}
 	trigger returned
 	{
         setstate documents_CMM default
+        setstate the_dropzone invisible
 	} 
 	trigger captured
 	{
-
+        setstate the_dropzone invisible
 	}
 }
 
