@@ -331,7 +331,7 @@ main_gate_keycard
 	    wait 200
         setstate main_gate_keycard_CMM default
         setstate Maingate_cmm default
-        // setstate main_gate_dropzone invisible
+        setstate main_gate_dropzone invisible
         
         
     }
